@@ -1,0 +1,20 @@
+The Strategy design pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+
+Intent
+
+The intent of the Strategy design pattern helps us to divide an algorithm from a host class and then move it to another class. By doing so the client can choose which algorithm will be performed in runtime from a set of algorithms that were implemented earlier.
+
+Motivation & Applicability
+
+
+There are common situations when classes differ only in their behaviour. For this case, it is a good idea to isolate the algorithms in separate classes in order to have the ability to select different algorithms at runtime. The Strategy pattern allows us to provide an alternative to subclassing the Context class to get a variety of algorithms or behaviours, eliminates large conditional statements and provides a choice of implementations for the same behaviour.
+ 
+Use the Strategy pattern whenever:
+Many related classes differ only in their behaviour
+You need different variants of an algorithm
+An algorithm uses data that clients shouldn't know about. Use the Strategy pattern to avoid exposing complex, algorithm-specific data structures.
+A class defines many behaviors, and these appear as multiple conditional statements in its operations. Instead of many conditionals, move related conditional branches into their own Strategy class.
+The classes and/or objects participating in this pattern are:
+Strategy (CalculateStrategy using ICalculateInterface) - declares an interface common to all supported algorithms. Context uses this interface to call the algorithm defined by a ConcreteStrategy
+ConcreteStrategy (Minus, Plus ) - implements the algorithm using the Strategy interface
+Context (CalculateClient) - is configured with a ConcreteStrategy object; maintains a reference to a Strategy object and may define an interface that lets Strategy access it's data.

@@ -1,0 +1,7 @@
+
+Design patterns covered
+1. Strategy pattern.
+
+git remote add origin https://github.com/jagadir/StrategyPattern.git
+git branch -M main
+git push -u origin main
